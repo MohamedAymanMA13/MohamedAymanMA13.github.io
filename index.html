@@ -58,15 +58,75 @@ h2{font-size:30px;letter-spacing:-.5px;margin-bottom:8px}
 footer{padding:36px 0;text-align:center;color:var(--mute);font-size:13px}
 @media(max-width:600px){nav div a:not(:last-child){display:none}.hero{padding:64px 0 48px}}
 </style>
+
+<style>
+:root{--bg:#070a16;--card:#0f1530;--a:#5eead4;--b:#8b8bff;--c:#f0abfc}
+body:before{background:radial-gradient(700px 500px at 90% -10%,rgba(139,139,255,.30),transparent),radial-gradient(600px 500px at -10% 25%,rgba(94,234,212,.16),transparent),radial-gradient(500px 400px at 60% 70%,rgba(240,171,252,.10),transparent)}
+body:after{content:"";position:fixed;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:-1;mask-image:linear-gradient(#000,transparent 70%)}
+h1 span{background:linear-gradient(90deg,var(--a),var(--b),var(--c));-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn.p{background:linear-gradient(90deg,var(--a),var(--b));box-shadow:0 8px 28px rgba(94,234,212,.25)}
+.btn.s:first-of-type{border-color:#3b4a8a}
+.card{background:linear-gradient(160deg,#131b3a,#0c1128);position:relative;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;right:0;height:3px;background:linear-gradient(90deg,var(--a),var(--b),var(--c));opacity:.0;transition:.2s}
+.card:hover:before{opacity:1}
+.grid{counter-reset:p}
+#work .grid .card h3:before{counter-increment:p;content:"0" counter(p);display:block;font-size:12px;letter-spacing:2px;color:var(--a);margin-bottom:10px;font-weight:600}
+h2{display:flex;align-items:center;gap:14px}
+h2:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.stat{background:linear-gradient(160deg,#131b3a,#0c1128)}
+.stat b{background:linear-gradient(90deg,#fff,#b9c4ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.job:before{background:linear-gradient(135deg,var(--a),var(--b))}
+.chips a{color:var(--a)}
+nav b:before{content:"MA";display:inline-grid;place-items:center;width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,var(--a),var(--b));color:#06101f;font-size:13px;margin-right:10px}
+.contact{background:radial-gradient(500px 250px at 50% 0,rgba(139,139,255,.25),transparent),var(--card)}
+.hero .tag i{box-shadow:0 0 12px var(--a)}
+</style>
+<style>
+nav div{display:flex;align-items:center;gap:20px}nav div a{margin:0!important}
+#lang{font:600 13px system-ui,"Segoe UI",Tahoma,sans-serif;color:var(--text);background:var(--card);border:1px solid #3b4a8a;border-radius:99px;padding:6px 14px;cursor:pointer}
+#lang:hover{border-color:var(--a)}
+.tl{border-left:0;border-inline-start:2px solid var(--line);padding-left:0;padding-inline-start:26px;margin-left:0;margin-inline-start:6px}
+.job:before{left:auto;inset-inline-start:-33px}
+.job li{margin:0 18px 6px 0;margin:0;margin-inline-start:18px}
+html[dir=rtl] body{font-family:"Segoe UI",Tahoma,"Noto Sans Arabic",system-ui,sans-serif}
+html[dir=rtl] h1{letter-spacing:0;line-height:1.35}
+html[dir=rtl] .tag i{margin-right:0;margin-inline-end:8px}
+html[dir=rtl] nav b:before{margin-right:0;margin-inline-end:10px}
+html[dir=rtl] .stat b,html[dir=rtl] h2,html[dir=rtl] h3{letter-spacing:0}
+html[dir=rtl] .chips{direction:ltr;justify-content:flex-end}
+html[dir=rtl] .chips:has(a){direction:rtl;justify-content:flex-start}
+html[dir=rtl] #work .grid .card h3:before{letter-spacing:0}
+@media(max-width:600px){#lang{padding:5px 12px}}
+</style>
+<style>
+html[data-theme=light]{--bg:#f6f7fc;--card:#ffffff;--line:#dbe0f0;--text:#141a33;--mute:#4b5578;--a:#0b8f7a;--b:#4f46e5;--c:#a21caf}
+html[data-theme=light] body:before{background:radial-gradient(700px 500px at 90% -10%,rgba(99,102,241,.16),transparent),radial-gradient(600px 500px at -10% 25%,rgba(13,148,136,.12),transparent),radial-gradient(500px 400px at 60% 70%,rgba(192,38,211,.07),transparent)}
+html[data-theme=light] body:after{background-image:radial-gradient(rgba(20,26,51,.09) 1px,transparent 1px)}
+html[data-theme=light] nav{background:rgba(246,247,252,.85)}
+html[data-theme=light] .card,html[data-theme=light] .stat{background:linear-gradient(160deg,#fff,#f1f3fb);box-shadow:0 2px 14px rgba(30,40,90,.06)}
+html[data-theme=light] .card:hover{border-color:#9aa6e0}
+html[data-theme=light] .stat b{background:linear-gradient(90deg,#141a33,#3b3f9e);-webkit-background-clip:text;background-clip:text;color:transparent}
+html[data-theme=light] .chips span{background:#eef1fb;color:#2b3560}
+html[data-theme=light] .job li{color:#2b3560}
+html[data-theme=light] .btn.p{color:#fff;background:linear-gradient(90deg,#0b8f7a,#4f46e5);box-shadow:0 8px 24px rgba(79,70,229,.25)}
+html[data-theme=light] .btn.s{background:#fff;color:var(--text);border-color:#c5cdea}
+html[data-theme=light] h1 span{background:linear-gradient(90deg,#0b8f7a,#4f46e5,#a21caf);-webkit-background-clip:text;background-clip:text;color:transparent}
+html[data-theme=light] .contact{background:radial-gradient(500px 250px at 50% 0,rgba(99,102,241,.14),transparent),#fff}
+html[data-theme=light] nav b:before{color:#fff}
+html[data-theme=light] #lang,html[data-theme=light] #theme{background:#fff;border-color:#c5cdea}
+html[data-theme=light] .job:before{box-shadow:0 0 0 4px var(--bg)}
+#theme{font:600 15px system-ui;color:var(--text);background:var(--card);border:1px solid #3b4a8a;border-radius:99px;width:34px;height:30px;cursor:pointer;line-height:1}
+#theme:hover{border-color:var(--a)}
+</style>
 </head>
 <body>
-<nav><div class="wrap"><b>Mohamed Ayman</b><div><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></div></nav>
+<nav><div class="wrap"><b>Mohamed Ayman</b><div><a href="#work">Work</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a><button id="theme" type="button" aria-label="Toggle light or dark theme">☀</button><button id="lang" type="button" aria-label="Switch language">العربية</button></div></div></nav>
 
 <header class="hero"><div class="wrap">
 <span class="tag"><i></i>Open to front-end roles and freelance projects</span>
-<h1>Front-End Developer<br>building <span>React</span> interfaces that last.</h1>
+<h1 id="h1">Front-End Developer<br>building <span>React</span> interfaces that last.</h1>
 <p class="lead">I am a Cairo-based front-end developer with 4+ years of experience building React applications for government, banking, e-commerce and travel projects. I care about maintainable code, performance and accessibility.</p>
-<div class="cta"><a class="btn p" href="#contact">Get in touch</a><a class="btn s" href="mailto:midoayman1995@gmail.com?subject=CV%20request">Request my CV</a><a class="btn s" href="https://github.com/MohamedAymanMA13">GitHub</a></div>
+<div class="cta"><a class="btn p" href="#contact">Get in touch</a><a class="btn s" href="Mohamed_Ayman_React_CV.pdf" download>Download CV (PDF)</a><a class="btn s" href="https://github.com/MohamedAymanMA13">GitHub</a></div>
 <div class="stats">
 <div class="stat"><b>4+ yrs</b><span>React front-end work</span></div>
 <div class="stat"><b>React / Next.js</b><span>TypeScript, Redux Toolkit</span></div>
@@ -76,28 +136,23 @@ footer{padding:36px 0;text-align:center;color:var(--mute);font-size:13px}
 </div></header>
 
 <section id="work"><div class="wrap">
-<h2>Selected work</h2>
-<p class="sub">Public practice projects with source code. They are personal exercises, not production products.</p>
+<h2>Projects</h2>
+<p class="sub">Projects from my CV. More of my code is on <a href="https://github.com/MohamedAymanMA13">GitHub</a>.</p>
 <div class="grid">
-<div class="card"><h3>E-commerce Product Page</h3><p>Product details page with an image slider, size, color and quantity selection, discounts and ratings, and an in-memory cart that merges matching variants. Lazy-loaded product route.</p>
-<div class="chips"><span>React 18</span><span>React Router 6</span><span>SCSS</span></div>
-<div class="links"><a href="https://mohamedaymanma13.github.io/task-ecommerce/">Live demo</a><a href="https://github.com/MohamedAymanMA13/task-ecommerce">Source</a></div></div>
-<div class="card"><h3>Spreadsheet to PDF</h3><p>Reads spreadsheet rows, previews them in a table and fills PDF templates in the browser, then packages the results as a ZIP. Includes right-to-left layout and Arabic number-to-words support.</p>
-<div class="chips"><span>React 18</span><span>SheetJS</span><span>pdf-lib</span><span>RTL</span></div>
-<div class="links"><a href="https://github.com/MohamedAymanMA13/excel-to-pdf">Source</a></div></div>
-<div class="card"><h3>GitHub Repository Search</h3><p>Searches public repositories through the GitHub API, with sorting by stars or forks, pagination and Redux-managed state.</p>
-<div class="chips"><span>React 17</span><span>Redux Thunk</span><span>Axios</span></div>
-<div class="links"><a href="https://github.com/MohamedAymanMA13/gitHub-Project">Source</a></div></div>
-<div class="card"><h3>Employee Management</h3><p>List, create, edit and delete employee records against a REST API, with client-side routing, translations and toast messages.</p>
-<div class="chips"><span>React 17</span><span>Redux</span><span>i18next</span></div>
-<div class="links"><a href="https://github.com/MohamedAymanMA13/EmployeeTask">Source</a></div></div>
-<div class="card"><h3>Reminders</h3><p>Create, edit and remove reminders with validation and relative dates, saved in the browser with localStorage.</p>
-<div class="chips"><span>React 17</span><span>Redux</span><span>Bootstrap 5</span></div>
-<div class="links"><a href="https://github.com/MohamedAymanMA13/Reminders">Source</a></div></div>
-<div class="card"><h3>Marketplace</h3><p>A Next.js and Tailwind CSS marketplace front end with internationalization, forms and date pickers.</p>
-<div class="chips"><span>Next.js</span><span>Tailwind CSS</span><span>next-i18next</span></div>
-<div class="links"><a href="https://github.com/MohamedAymanMA13/MarketPlace">Source</a></div></div>
-</div></div></section>
+<div class="card"><h3>Government Certification System</h3><p>Interfaces and API integration layers for a government certification system, with Redux Toolkit state management. Work included loading performance and accessibility improvements.</p><div class="chips"><span>React.js</span><span>Redux Toolkit</span><span>Accessibility</span></div></div>
+<div class="card"><h3>Equipment Management Portal</h3><p>Government equipment management portal. Redux Saga manages asynchronous workflows and side effects.</p><div class="chips"><span>React.js</span><span>Redux Saga</span></div></div>
+<div class="card"><h3>Banking Back-Office Dashboards</h3><p>Internal management dashboards for a banking back-office system. Material UI tables handle large financial datasets, and Redux Toolkit centralizes state to reduce duplicate API requests.</p><div class="chips"><span>React.js</span><span>TypeScript</span><span>Material UI</span><span>Redux Toolkit</span></div></div>
+<div class="card"><h3>B2B/B2C Hotel Marketplace</h3><p>Hotel marketplace for business and consumer customers, plus responsive e-commerce and travel booking systems.</p><div class="chips"><span>Next.js</span><span>Tailwind CSS</span></div></div>
+<div class="card"><h3>NEXUS GYM</h3><p>Interfaces for client onboarding, schedules, registration and payments.</p><div class="chips"><span>React.js</span><span>Redux Toolkit</span></div></div>
+<div class="card"><h3>DIMENSIONS ELITE VIP Travel</h3><p>Interfaces for bookings, itineraries and member accounts.</p><div class="chips"><span>React.js</span><span>Redux Toolkit</span></div></div>
+<div class="card"><h3>Vero nopCommerce Admin Dashboard</h3><p>Admin dashboard for products, orders and customer data.</p><div class="chips"><span>nopCommerce</span><span>React.js</span></div></div>
+<div class="card"><h3>ASP.NET Integrations</h3><p>React components and REST API workflows integrated into existing ASP.NET applications through CSHTML/Razor views.</p><div class="chips"><span>React.js</span><span>ASP.NET</span><span>Razor</span></div></div>
+</div>
+<h2 style="margin-top:48px">Public practice projects</h2>
+<p class="sub">Personal exercises with source code on GitHub.</p>
+<div class="chips"><span><a href="https://github.com/MohamedAymanMA13/task-ecommerce">E-commerce Product Page</a></span><span><a href="https://github.com/MohamedAymanMA13/excel-to-pdf">Spreadsheet to PDF</a></span><span><a href="https://github.com/MohamedAymanMA13/gitHub-Project">GitHub Repository Search</a></span><span><a href="https://github.com/MohamedAymanMA13/EmployeeTask">Employee Management</a></span><span><a href="https://github.com/MohamedAymanMA13/Reminders">Reminders</a></span><span><a href="https://github.com/MohamedAymanMA13/MarketPlace">Marketplace</a></span></div>
+<div class="cta"><a class="btn s" href="https://github.com/MohamedAymanMA13">View all on GitHub</a></div>
+</div></section>
 
 <section id="experience"><div class="wrap">
 <h2>Experience</h2>
@@ -131,9 +186,41 @@ footer{padding:36px 0;text-align:center;color:var(--mute);font-size:13px}
 
 <section id="contact"><div class="wrap"><div class="contact">
 <h2>Let's work together</h2>
-<p>I am open to front-end roles in Egypt or remote, and to freelance projects. Send me a message and I will reply with my CV and availability.</p>
+<p>I am open to front-end roles in Egypt or remote, and to freelance projects. Send me a message, or download my CV above.</p>
 <div class="cta" style="justify-content:center"><a class="btn p" href="mailto:midoayman1995@gmail.com">midoayman1995@gmail.com</a><a class="btn s" href="https://www.linkedin.com/in/mohamedaymanma/">LinkedIn</a><a class="btn s" href="https://github.com/MohamedAymanMA13">GitHub</a></div>
 </div></div></section>
 <footer>© 2026 Mohamed Ayman · Cairo, Egypt</footer>
+<script>
+var AR={"Work": "الأعمال", "Experience": "الخبرة", "Skills": "المهارات", "Contact": "تواصل", "Open to front-end roles and freelance projects": "متاح لوظائف الواجهات الأمامية والمشاريع الحرة", "I am a Cairo-based front-end developer with 4+ years of experience building React applications for government, banking, e-commerce and travel projects. I care about maintainable code, performance and accessibility.": "مطوّر واجهات أمامية من القاهرة، لدي أكثر من 4 سنوات خبرة في بناء تطبيقات React لمشاريع حكومية ومصرفية وتجارة إلكترونية وسفر. أهتم بالكود القابل للصيانة والأداء وسهولة الاستخدام.", "Get in touch": "تواصل معي", "Download CV (PDF)": "تحميل السيرة الذاتية (PDF)", "4+ yrs": "+4 سنوات", "React front-end work": "خبرة في واجهات React", "TypeScript, Redux Toolkit": "TypeScript وRedux Toolkit", "Gov · Banking": "حكومي · بنوك", "E-commerce · Travel": "تجارة إلكترونية · سفر", "Cairo": "القاهرة", "Egypt, remote friendly": "مصر، ومتاح للعمل عن بُعد", "Projects": "المشاريع", "Projects from my CV. More of my code is on": "مشاريع من سيرتي الذاتية. المزيد من الكود على", ".": ".", "Government Certification System": "نظام شهادات حكومي", "Interfaces and API integration layers for a government certification system, with Redux Toolkit state management. Work included loading performance and accessibility improvements.": "واجهات وطبقات ربط مع الـAPI لنظام شهادات حكومي، مع إدارة الحالة بـRedux Toolkit. شمل العمل تحسين سرعة التحميل وسهولة الاستخدام.", "Equipment Management Portal": "بوابة إدارة المعدات", "Government equipment management portal. Redux Saga manages asynchronous workflows and side effects.": "بوابة حكومية لإدارة المعدات، تستخدم Redux Saga لإدارة العمليات غير المتزامنة والآثار الجانبية.", "Banking Back-Office Dashboards": "لوحات تحكم للمكتب الخلفي لبنك", "Internal management dashboards for a banking back-office system. Material UI tables handle large financial datasets, and Redux Toolkit centralizes state to reduce duplicate API requests.": "لوحات إدارة داخلية لنظام المكتب الخلفي في بنك. جداول Material UI تعرض بيانات مالية كبيرة، وRedux Toolkit يوحّد الحالة لتقليل طلبات الـAPI المكررة.", "B2B/B2C Hotel Marketplace": "سوق فنادق B2B/B2C", "Hotel marketplace for business and consumer customers, plus responsive e-commerce and travel booking systems.": "سوق فنادق للشركات والأفراد، إضافة إلى أنظمة تجارة إلكترونية وحجز سفر متجاوبة.", "Interfaces for client onboarding, schedules, registration and payments.": "واجهات لانضمام العملاء والجداول والتسجيل والمدفوعات.", "Interfaces for bookings, itineraries and member accounts.": "واجهات للحجوزات وخطط الرحلات وحسابات الأعضاء.", "Vero nopCommerce Admin Dashboard": "لوحة تحكم Vero على nopCommerce", "Admin dashboard for products, orders and customer data.": "لوحة تحكم للمنتجات والطلبات وبيانات العملاء.", "ASP.NET Integrations": "التكامل مع ASP.NET", "React components and REST API workflows integrated into existing ASP.NET applications through CSHTML/Razor views.": "دمج مكوّنات React وتدفقات REST API داخل تطبيقات ASP.NET قائمة عبر صفحات CSHTML/Razor.", "Public practice projects": "مشاريع تدريبية عامة", "Personal exercises with source code on GitHub.": "تمارين شخصية وكودها المصدري على GitHub.", "E-commerce Product Page": "صفحة منتج لمتجر إلكتروني", "Spreadsheet to PDF": "من جدول بيانات إلى PDF", "GitHub Repository Search": "البحث في مستودعات GitHub", "Employee Management": "إدارة الموظفين", "Reminders": "التذكيرات", "Marketplace": "سوق إلكتروني", "View all on GitHub": "عرض الكل على GitHub", "Professional work, newest first.": "الخبرة العملية، من الأحدث.", "Front-End Developer (React), Merge Technology Egypt": "مطوّر واجهات أمامية (React)، Merge Technology Egypt", "Jan 2024 to Oct 2026": "يناير 2024 إلى أكتوبر 2026", "Built React.js and Redux Toolkit interfaces and API integration layers for a government certification system.": "بناء واجهات React.js وRedux Toolkit وطبقات الربط مع الـAPI لنظام شهادات حكومي.", "Developed an equipment management portal using Redux Saga to manage asynchronous workflows and side effects.": "تطوير بوابة لإدارة المعدات باستخدام Redux Saga لإدارة العمليات غير المتزامنة والآثار الجانبية.", "Improved application loading performance and accessibility across government web applications.": "تحسين سرعة التحميل وسهولة الاستخدام في تطبيقات الويب الحكومية.", "Freelance Front-End Developer, self-employed": "مطوّر واجهات أمامية حر", "Cairo · Jan 2023 to 2025 · alongside employment": "القاهرة · يناير 2023 إلى 2025 · بالتوازي مع العمل الوظيفي", "Built internal management dashboards for a banking back-office system using React.js and TypeScript.": "بناء لوحات إدارة داخلية لنظام المكتب الخلفي في بنك باستخدام React.js وTypeScript.", "Implemented Material UI tables for large financial datasets and centralized state with Redux Toolkit to reduce duplicate API requests.": "تنفيذ جداول Material UI لبيانات مالية كبيرة وتوحيد الحالة بـRedux Toolkit لتقليل طلبات الـAPI المكررة.", "Developed a B2B/B2C hotel marketplace with Next.js and Tailwind CSS, alongside responsive e-commerce and travel booking systems.": "تطوير سوق فنادق B2B/B2C بـNext.js وTailwind CSS، إضافة إلى أنظمة تجارة إلكترونية وحجز سفر متجاوبة.", "Front-End Developer (React), Gamma Tech Solution": "مطوّر واجهات أمامية (React)، Gamma Tech Solution", "Cairo · May 2022 to Jan 2024": "القاهرة · مايو 2022 إلى يناير 2024", "Developed NEXUS GYM interfaces for client onboarding, schedules, registration and payments using React.js and Redux Toolkit.": "تطوير واجهات NEXUS GYM لانضمام العملاء والجداول والتسجيل والمدفوعات باستخدام React.js وRedux Toolkit.", "Built DIMENSIONS ELITE VIP Travel interfaces for bookings, itineraries and member accounts.": "بناء واجهات DIMENSIONS ELITE VIP Travel للحجوزات وخطط الرحلات وحسابات الأعضاء.", "Created a Vero nopCommerce admin dashboard for products, orders and customer data.": "إنشاء لوحة تحكم Vero على nopCommerce للمنتجات والطلبات وبيانات العملاء.", "Integrated React components and REST API workflows into existing ASP.NET applications using CSHTML/Razor views.": "دمج مكوّنات React وتدفقات REST API في تطبيقات ASP.NET قائمة عبر صفحات CSHTML/Razor.", "Education: B.Sc. in Information Systems, EGI Academy (El Gezira), 2018. Languages: Arabic, English.": "التعليم: بكالوريوس نظم المعلومات، أكاديمية EGI (الجزيرة)، 2018. اللغات: العربية والإنجليزية.", "What I work with day to day.": "ما أعمل به يوميًا.", "Core": "الأساسيات", "State and UI": "الحالة والواجهات", "Tools and practices": "الأدوات والممارسات", "Code review": "مراجعة الكود", "AI-assisted development": "التطوير بمساعدة الذكاء الاصطناعي", "ASP.NET/Razor integration": "تكامل ASP.NET/Razor", "Let's work together": "خلّينا نشتغل سوا", "I am open to front-end roles in Egypt or remote, and to freelance projects. Send me a message, or download my CV above.": "متاح لوظائف الواجهات الأمامية في مصر أو عن بُعد، وللمشاريع الحرة. راسلني، أو حمّل سيرتي الذاتية من الأعلى.", "© 2026 Mohamed Ayman · Cairo, Egypt": "© 2026 محمد أيمن · القاهرة، مصر", "Mohamed Ayman": "محمد أيمن", "Mohamed Ayman | Front-End Developer (React)": "محمد أيمن | مطوّر واجهات أمامية (React)"};
+var H1={en:"Front-End Developer<br>building <span>React</span> interfaces that last.",ar:"مطوّر واجهات أمامية<br>أبني واجهات <span>React</span> تدوم."};var DESC_AR="مطوّر واجهات أمامية من القاهرة بخبرة 4+ سنوات في React وNext.js وTypeScript لمشاريع حكومية ومصرفية وتجارة إلكترونية وسفر.";
+
+(function(){
+var nodes=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n;
+while(n=w.nextNode()){var t=n.nodeValue.trim();if(t&&AR[t]&&!(n.parentNode.closest&&n.parentNode.closest('#h1,script,style')))nodes.push([n,n.nodeValue,t])}
+var meta=document.querySelector('meta[name=description]'),metaEn=meta.content,titleEn=document.title,btn=document.getElementById('lang'),h1=document.getElementById('h1');
+function set(l){
+ nodes.forEach(function(x){x[0].nodeValue=l==='ar'?x[1].replace(x[2],AR[x[2]]):x[1]});
+ h1.innerHTML=H1[l];
+ document.documentElement.lang=l;document.documentElement.dir=l==='ar'?'rtl':'ltr';
+ document.title=l==='ar'?AR['Mohamed Ayman | Front-End Developer (React)']:titleEn;
+ meta.content=l==='ar'?DESC_AR:metaEn;
+ btn.textContent=l==='ar'?'English':'العربية';
+ try{localStorage.setItem('lang',l)}catch(e){}
+}
+btn.addEventListener('click',function(){set(document.documentElement.lang==='ar'?'en':'ar')});
+var q=(location.search.match(/[?&]lang=(ar|en)/)||[])[1],st;try{st=localStorage.getItem('lang')}catch(e){}
+var init=q||st||((navigator.language||'').slice(0,2)==='ar'?'ar':'en');
+if(init==='ar')set('ar');
+})();
+</script>
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('theme'),t;
+try{t=localStorage.getItem('theme')}catch(e){}
+if(!t)t=(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark';
+var q=(location.search.match(/[?&]theme=(light|dark)/)||[])[1];if(q)t=q;
+function set(v){r.setAttribute('data-theme',v);b.textContent=v==='dark'?'☀':'☾';b.setAttribute('aria-pressed',v==='dark');var m=document.querySelector('meta[name=theme-color]');if(m)m.content=v==='dark'?'#070a16':'#f6f7fc';try{localStorage.setItem('theme',v)}catch(e){}}
+b.addEventListener('click',function(){set(r.getAttribute('data-theme')==='dark'?'light':'dark')});set(t);})();
+</script>
+<!-- Visit counter: paste GoatCounter script here once the account exists -->
 </body>
 </html>
